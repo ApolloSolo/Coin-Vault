@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS coin_vault;
+
+CREATE DATABASE coin_vault;
