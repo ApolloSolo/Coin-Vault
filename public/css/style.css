@@ -1,0 +1,40 @@
+body {
+    background-image: url('/images/cryptocurrencies3.jpg');
+}
+
+.main-header-group {
+    background-color: rgba(13, 13, 13, 0.904);;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    margin: 60px auto 20px auto
+}
+
+.vault {
+    max-height: 250px;
+}
+
+.main-header-top, .main-header-bottom {
+    font-family: Blippo, fantasy;
+    font-size: 125px;
+    color: rgb(218, 199, 94)
+}
+
+.secondary-header {
+    font-family: OCR A Std, monospace;
+    font-size: 40px;
+    background-color: rgb(13, 13, 13);
+    padding: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: rgb(218, 199, 94)
+}
+
+.login-btn, .register-btn {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color:rgb(218, 199, 94);
+    background-color:rgb(13, 13, 13);
+    padding: 10px 30px;
+    margin: 40px 
+}
