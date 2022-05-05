@@ -2,11 +2,11 @@
 function logout() {
   fetch("/api/user/logout", {
     method: "post",
-    headers: { "Content-Type": "application/json" }
+    headers: { "Content-Type": "application/json" },
   })
     .then(function () {
       //return to the homepage route
       document.location.replace("/");
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 }
