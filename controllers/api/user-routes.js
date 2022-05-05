@@ -53,8 +53,8 @@ router.post(
       user_id: newUser.id,
       btc: 0,
       eth: 0,
-      atom: 0,
-      doge: 0,
+      atom: 6,
+      doge: 20,
     });
     req.session.save(() => {
       req.session.user_id = newUser.id;
@@ -83,6 +83,7 @@ router.post(
       throw new ExpressError("Incorrect password!", 400);
     }
 
+    //Upon login, req.session.user_id will point to MySQL Primary Key of id
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;

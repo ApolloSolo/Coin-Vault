@@ -8,9 +8,9 @@
     <div class="user-info d-flex flex-row m-5">
       <img src="https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png" class="avatar"></img>
       <div class="user-info-text d-flex flex-column m-5">
-        <h1 class="username pb-4">Username</h1>
-        <h2 class="funds pb-3">Funds Available: $$$,$$$.$$</h2>
-        <h2 class="valuation">Total Valuation: $$$,$$$.$$</h2>
+        <h1 class="username pb-4">{{userData.username}}</h1>
+        <h2 class="funds pb-3">Funds Available: $ <span>{{currentFunds}}</span></h2>
+        <h2 class="valuation">Total Valuation: $ {{userData.money}}</h2>
       </div>
     </div>
     <div class="cards d-flex flex-row container">
@@ -30,19 +30,18 @@
       <div class="coin-price card col-5">
         <div class="coins-list-group card-header">PRICE</div>
         <ul class="coin-list list-group list-group-flush">
-          <li id="BTC" class="list-group-item">$ 100.75</li>
-          <li id="ETH" class="list-group-item">$ 100.75</li>
-          <li id="ATOM" class="list-group-item">$ 100.75</li>
-          <li id="DOGE" class="list-group-item">$ 100.75</li>
+          {{#each coinData}}
+          <li id="{{this.symbol}}" class="list-group-item">$ {{this.price}} </li>
+          {{/each}}
         </ul>
       </div>
       <div class="coin-number card col-4">
         <div class="coins-list-group card-header">COIN NUMBER</div>
         <ul class="coin-list list-group list-group-flush">
-          <li id="BTC" class="list-group-item">12</li>
-          <li id="ETH" class="list-group-item">6</li>
-          <li id="ATOM" class="list-group-item">9</li>
-          <li id="DOGE" class="list-group-item">5000</li>
+          <li id="BTC" class="list-group-item">{{userData.wallet.btc}}</li>
+          <li id="ETH" class="list-group-item">{{userData.wallet.eth}}</li>
+          <li id="ATOM" class="list-group-item">{{userData.wallet.atom}}</li>
+          <li id="DOGE" class="list-group-item">{{userData.wallet.doge}}</li>
         </ul>
       </div>
     </div>

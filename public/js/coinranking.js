@@ -1,37 +1,40 @@
-const coinID = [
-	{
-		symbol: 'BTC',
-		uuid: 'Qwsogvtv82FCd'
-	},
-	{
-		symbol: 'ETH',
-		uuid: 'razxDUgYGNAdQ'
-	},
-	{
-		symbol: 'DOGE',
-		uuid: 'a91GCGd_u96cF'
-	},
-	{
-		symbol: "LTC",
-		uuid: 'D7B1x_ks7WhV5'
-	},
-	{
-		symbol: 'ATOM',
-		uuid: 'Knsels4_Ol-Ny'
-	}
-];
+const axios = require("axios");
+require("dotenv").config();
+const coinID = ["BTC", "ETH", "ATOM", "DOGE"];
 
 const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
-		'X-RapidAPI-Key': 'e7d9710815msh122213a08c14487p1d2ed7jsnfcc325940b79'
-	}
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+    "X-RapidAPI-Key": "e7d9710815msh122213a08c14487p1d2ed7jsnfcc325940b79",
+  },
 };
 
-async function getCoinData(symbol) {
-	let data = await axios.get(`https://coinranking1.p.rapidapi.com/coin/${coinID[0].uuid}/price?referenceCurrencyUuid=yhjMzLPhuIDl`, options)
-	console.log(data)
+async function getCoinData() {
+  let data = await axios.get(
+    "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
+    options
+  );
+  //console.log(data.data.data.coins);
+  return data.data.data.coins;
 }
 
-getCoinData()
+async function reducedCoinData() {
+  let coinData = await getCoinData();
+  let newArray = [];
+  for (let i = 0; i < coinData.length; i++) {
+    for (let j = 0; j < coinID.length; j++) {
+      if (coinData[i].symbol === coinID[j]) {
+        let coin = {
+          symbol: coinData[i].symbol,
+          price: parseFloat(coinData[i].price).toFixed(2),
+        };
+        newArray.push(coin);
+      }
+    }
+  }
+  //console.log(newArray);
+  return newArray;
+}
+
+module.exports = reducedCoinData;

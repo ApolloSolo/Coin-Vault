@@ -1,10 +1,11 @@
+const axios = require("axios");
 require('dotenv').config();
 
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Host': api-host,
-    'X-RapidAPI-Key': api-key
+    'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
+    'X-RapidAPI-Key': 'e7d9710815msh122213a08c14487p1d2ed7jsnfcc325940b79'
   }
 };
 
@@ -39,7 +40,7 @@ function getSomeCoins(coinArray) {
   console.log(coinArray[0], coinArray[1], coinArray[11]);
 }
 
-getCoinData();
+module.exports = getCoinData;
 
 //document.addEventListener => call allCoinData with which button?
 
