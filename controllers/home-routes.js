@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { User } = require("../models/");
-const hasSess = require('../utils/auth');
+//const { User } = require("../models/");
+//const hasSess = require('../utils/auth');
 
 // homepage
 router.get("/", (req, res) => {
-  res.render("homepage");
+  res.render("homepage", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/login", (req, res) => {
@@ -16,7 +16,7 @@ router.get("/login", (req, res) => {
 });
 
 router.get('/dashboard', async (req, res) => {
-
+  res.render("dashboard", { loggedIn: req.session.loggedIn })
 })
 
 module.exports = router;
