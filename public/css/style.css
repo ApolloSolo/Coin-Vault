@@ -2,6 +2,7 @@ body {
     background-image: url('/images/cryptocurrencies3.jpg');
 }
 
+/* Homepage Styling */
 .main-header-group {
     background-color: rgba(13, 13, 13, 0.904);;
     padding: 30px;
@@ -36,5 +37,40 @@ body {
     color:rgb(218, 199, 94);
     background-color:rgb(13, 13, 13);
     padding: 10px 30px;
-    margin: 40px 
+    margin: 40px  
 }
+
+/* Register and Login Modal Styling */
+
+.modal-header {
+    background-color: rgb(13, 13, 13);
+}
+
+.modal-title {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color:rgb(218, 199, 94);
+}
+
+.btn-close {
+    background-color:rgb(218, 199, 94);
+}
+
+.modal-content {
+    background-color: rgb(208,208,210);
+}
+
+.modal-labels {
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+}
+
+.modal-btn {
+    background-color: rgb(13, 13, 13);
+    font-family: Blippo, fantasy;
+    font-size: 25px;
+    color:rgb(218, 199, 94);
+}
+
+
+
