@@ -1,12 +1,18 @@
-const coinArray = [];
+require('dotenv').config();
 
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
-    'X-RapidAPI-Key': 'a0f9c2e4cdmshbe352db2ac16675p113388jsne92dbdd69642'
+    'X-RapidAPI-Host': api-host,
+    'X-RapidAPI-Key': api-key
   }
 };
+
+const coinArray = [];
+//BIT symbol/price
+//ETH symbol/price
+//DOGE symbol/price
+//ATOM symbol/price (number 25)
 
 async function getCoinData() {
   let data = await axios.get('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0', options)
@@ -26,8 +32,15 @@ function loopCoin(data, i) {
       coinArray.push(coinObject);
   }
   console.log(coinArray);
+  getSomeCoins(coinArray);
   }
+
+function getSomeCoins(coinArray) {
+  console.log(coinArray[0], coinArray[1], coinArray[11]);
+}
 
 getCoinData();
 
 //document.addEventListener => call allCoinData with which button?
+
+//coins: BTC, ETC, DOGE, 
