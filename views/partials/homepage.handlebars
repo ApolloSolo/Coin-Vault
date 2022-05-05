@@ -23,7 +23,70 @@
   </header>
   
   <div class="buttons d-inline-flex justify-content-center">
-    <button type="button" class="login-btn btn btn-dark btn-lg">Login</button>
-    <button type="button" class="register-btn btn btn-dark btn-lg">Register</button>
+    <!--Button to Login-->
+    <button type="button" class="login-btn btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    
+    <!--  Login Modal -->
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="loginUsername" class="modal-labels">Username</label>
+                <input type="username" class="form-control" id="login-username-input" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <label for="loginPassword" class="modal-labels">Password</label>
+                <input type="password" class="form-control" id="login-password-input" placeholder="Password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn modal-btn" data-bs-dismiss="modal">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--Button to Login-->
+    <button type="button" class="register-btn btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+    
+    <!-- Register Modal -->
+    <div class="modal fade registerModal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="registerUsername" class="modal-labels"> Please Choose a Username</label>
+                <input type="username" class="form-control" id="register-username-input" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <label for="registerEmail" class="modal-labels">Enter Your Email Address</label>
+                <input type="email" class="form-control" id="register-email-input" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="registerPassword" class="modal-labels"> Please Choose a Password (6-10 Characters)</label>
+                <input type="password" class="form-control" id="register-password-input" placeholder="Password">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn modal-btn" data-dismiss="modal">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
+   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
