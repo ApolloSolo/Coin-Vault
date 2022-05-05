@@ -9,10 +9,10 @@ const options = {
 };
 
 const coinArray = [];
-//BIT symbol/price
-//ETH symbol/price
-//DOGE symbol/price
-//ATOM symbol/price (number 25)
+//BIT uuid/symbol/price
+//ETH uuid/symbol/price
+//DOGE uuid/symbol/price
+//ATOM uuid/symbol/price
 
 async function getCoinData() {
   let data = await axios.get('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0', options)
@@ -22,25 +22,41 @@ async function getCoinData() {
 
 function loopCoin(data, i) {
   for (var i = 0; i < data.data.data.coins.length; i++) {
+      var uuid = data.data.data.coins[i].uuid;
       var symbol = data.data.data.coins[i].symbol;
       var price = data.data.data.coins[i].price;
 
       var coinObject = {
+          uuid,
           symbol,
           price
       }
       coinArray.push(coinObject);
   }
-  console.log(coinArray);
+  //console.log(coinArray);
   getSomeCoins(coinArray);
   }
 
 function getSomeCoins(coinArray) {
-  console.log(coinArray[0], coinArray[1], coinArray[11]);
+  bitCoin = coinArray[0];
+  ethCoin = coinArray[1];
+  dogeCoin = coinArray[11];
+  atomCoin = coinArray[27];
+
+  fourCoinArray.push(bitCoin);
+  fourCoinArray.push(ethCoin);
+  fourCoinArray.push(dogeCoin);
+  fourCoinArray.push(atomCoin);
+
+  displayCoin(fourCoinArray);
+}
+
+function displayCoin() {
+  console.log(fourCoinArray);
 }
 
 getCoinData();
 
 //document.addEventListener => call allCoinData with which button?
 
-//coins: BTC, ETC, DOGE, 
+//coins: BTC, ETC, DOGE, ATOM
