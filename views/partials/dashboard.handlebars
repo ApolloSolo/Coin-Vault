@@ -5,24 +5,104 @@
         <button>Logout</button>
     </header>
 
-    <main>
-        <div class="user-card">
-            <div class="user-info"
-                <img>
-                <h1 class="username">Username</h1>
-                <h2 class="funds">Funds Available:</h2>
-                <h2 class="valuation">Total Valuation:</h2>
+    <body class="d-flex flex-column">
+
+    <header class="d-flex justify-content-between">
+        <h1 class="dashboard-header m-4"><img src="/images/safe.png" class="header-img me-3"></span>Coin Vault</h1>
+        <button type="button" class="logout-btn btn btn-secondary ">Logout</button>
+    </header>
+
+    <main class="d-flex justify-content-center">
+        <div class="user-card m-5">
+            <div class="user-info d-flex flex-row m-5">
+                <img src="/images/avatar.png" class="avatar"></img>
+                <div class="user-info-text d-flex flex-column m-5">
+                    <h1 class="username pb-4">Username</h1>
+                    <h2 class="funds pb-3">Funds Available: {{$$$,$$$.$$}}</h2>
+                    <h2 class="valuation">Total Valuation: {{$$$,$$$.$$}}</h2>
+                </div>
             </div>
-            <div class="coin-chart">
-                <div class="coins-list=group">
-                    <ul>
-                        <li id="BTC"><span><img src="./public/images/"</span>BTC</li>
+            <div class="cards d-flex flex-row container">
+                <div class="coin-name card col-3">
+                    <div class="coins-list-group card-header">COIN</div>
+                    <ul class="coin-list list-group list-group-flush">
+                        <li id="BTC" class="list-group-item"><span><img src="/images/bitcoin-btc-logo.png"
+                                    class="icon ms-1 me-3"></span>BTC</li>
+                        <li id="ETH" class="list-group-item"><span><img src="/images/ethereum-eth-logo.png"
+                                    class="icon ms-1 me-3"></span>ETH</li>
+                        <li id="ATOM" class="list-group-item"><span><img src="/images/cosmos-atom-logo.png"
+                                    class="icon ms-1 me-3"></span>ATOM</li>
+                        <li id="DOGE" class="list-group-item"><span><img src="/images/dogecoin-doge-logo.png"
+                                    class="icon ms-1 me-3"></span>DOGE</li>
+                    </ul>
+                </div>
+                <div class="coin-price card col-5">
+                    <div class="coins-list-group card-header">PRICE</div>
+                    <ul class="coin-list list-group list-group-flush">
+                        <li id="BTC" class="list-group-item">{{ }}</li>
+                        <li id="ETH" class="list-group-item">{{ }}</li>
+                        <li id="ATOM" class="list-group-item">{{ }}</li>
+                        <li id="DOGE" class="list-group-item">{{ }}</li>
+                    </ul>
+                </div>
+                <div class="coin-number card col-4">
+                    <div class="coins-list-group card-header">COIN NUMBER</div>
+                    <ul class="coin-list list-group list-group-flush">
+                        <li id="BTC" class="list-group-item">{{ }}</li>
+                        <li id="ETH" class="list-group-item">{{ }}</li>
+                        <li id="ATOM" class="list-group-item">{{ }}</li>
+                        <li id="DOGE" class="list-group-item">{{ }}</li>
                     </ul>
                 </div>
             </div>
-
-        </div>
+        </div>   
     </main>
 
+    <div class="buttons d-inline-flex justify-content-center">
+        <!-- Button to Buy -->
+        <button type="button" class="buy-btn btn btn-dark btn-lg" data-bs-toggle="modal"
+            data-bs-target="#buyModal">BUY</button>
+        <!-- Buy Modal -->
+        <div class="modal fade buy-modal" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Buy Cryptocurrency</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn modal-btn" data-bs-dismiss="modal">Buy</button>
+                </div>
+              </div>
+            </div>
+          </div>    
+        <!-- Button to Sell -->
+        <button type="button" class="sell-btn btn btn-dark btn-lg" data-bs-toggle="modal"
+            data-bs-target="#sellModal">SELL</button>
+        <!-- Sell Modal -->
+        <div class="modal fade sell-modal" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Sell Cryptocurrency</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn modal-btn" data-bs-dismiss="modal">Sell</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>

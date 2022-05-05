@@ -72,5 +72,82 @@ body {
     color:rgb(218, 199, 94);
 }
 
+/* Dashboard Styling */
+
+header {
+    background-color: rgb(13, 13, 13);
+}
+
+.dashboard-header {
+    font-family: Blippo, fantasy;
+    font-size: 75px;
+    color:rgb(218, 199, 94);
+}
+
+.header-img {
+    max-height: 100px
+}
+
+.logout-btn {
+    font-family: Blippo, fantasy;
+    font-size: 30px;
+    color:rgb(13, 13, 13);
+    background-color:rgb(218, 199, 94);
+    padding: 10px 30px;
+    margin: 40px  
+}
+
+.user-card {
+    background-color: rgb(13, 13, 13);
+    border-radius: 15px;
+}
+
+.avatar {
+    max-height: 300px;
+}
+
+.coin-list {
+    background-color: rgb(208,208,210);
+}
+
+.icon {
+    max-height: 50px
+}
+
+.username {
+    font-family: Blippo, fantasy;
+    font-size: 60px;
+    color:rgb(218, 199, 94);
+}
+
+.user-info-text {
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+    color:rgb(218, 199, 94);
+}
+
+.cards {
+    padding: 0px 40px 40px 40px
+}
+
+.card-header {
+    background-color: rgb(13, 13, 13);
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+    color:rgb(218, 199, 94);
+    text-align: center;
+    font-weight: bold;
+}
+
+.list-group-item {
+    font-family: OCR A Std, monospace;
+    font-size: 40px;
+    color:rgb(13, 13, 13);
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+
 
 
