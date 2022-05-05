@@ -59,11 +59,11 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   const userData = await User.findOne({
     where: {
-      email: req.body.email,
+      username: req.body.username,
     },
   });
   if (!userData) {
-    res.status(404).json({ message: "User email not found" });
+    res.status(404).json({ message: "User not found" });
     return;
   }
   const validPassword = userData.checkPassword(req.body.password);
