@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Wallet } = require("../../models/index");
+const catchAsyncError = require("../../utils/catchAsyncError");
 
 router.get("/", (req, res) => {
   Wallet.findAll()
