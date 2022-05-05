@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Wallet } = require("../../models");
 const startingFunds = 10000;
 
 //Get all users
@@ -17,7 +17,12 @@ router.get("/:id", async (req, res) => {
     where: {
       id: req.params.id,
     },
-    //include: [] wallet data
+    include: [
+      {
+        model: Wallet,
+        attributes: ["btc", "eth", "atom", "doge"],
+      },
+    ],
   });
   if (!userData) {
     res.status(404).json({ message: "No user found by that id" });
@@ -34,7 +39,7 @@ router.post("/", async (req, res) => {
     password: req.body.password,
     money: startingFunds,
   });
-  /* Wallet creation concurrent with user. (Still nede wallet model)
+  //Wallet creation concurrent with user.
   let newWallet = await Wallet.create({
     user_id: newUser.id,
     btc: 0,
@@ -42,13 +47,12 @@ router.post("/", async (req, res) => {
     atom: 0,
     doge: 0,
   });
-  */
   req.session.save(() => {
     req.session.user_id = newUser.id;
     req.session.username = newUser.username;
     req.session.loggedIn = true;
   });
-  res.json([newUser /*newWallet*/]);
+  res.json([newUser, newWallet]);
 });
 
 // Login
@@ -81,11 +85,11 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.json({message: "logged out!"})
+      res.json({ message: "logged out!" });
       res.status(204).end();
     });
   } else {
-    res.json({message: "NOT logged out! May not be logged in."})
+    res.json({ message: "NOT logged out! May not be logged in." });
     res.status(404).end();
   }
 });
