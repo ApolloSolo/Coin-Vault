@@ -41,8 +41,8 @@ router.get(
 //Create a user
 router.post(
   "/",
-  catchAsyncError(async (req, res) => {
-    let newUser = await User.create({
+  catchAsyncError(async (req, res, next) => {
+    let userData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
@@ -50,20 +50,20 @@ router.post(
     });
     //Wallet creation concurrent with user.
     let newWallet = await Wallet.create({
-      user_id: newUser.id,
+      user_id: userData.id,
       btc: 0,
       eth: 0,
       atom: 6,
       doge: 20,
     });
-    req.session.save(() => {
-      req.session.user_id = newUser.id;
-      req.session.username = newUser.username;
-      req.session.loggedIn = true;
-    });
-    console.log("This is created user sess")
-    console.log(req.session.user_id);
-    res.json([newUser, newWallet]);
+
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
+
+        res.json([userData, newWallet]);
+      });
   })
 );
 
