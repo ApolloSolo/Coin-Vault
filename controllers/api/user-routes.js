@@ -41,7 +41,7 @@ router.get(
 //Create a user
 router.post(
   "/",
-  catchAsyncError(async (req, res, next) => {
+  catchAsyncError(async (req, res) => {
     let newUser = await User.create({
       username: req.body.username,
       email: req.body.email,
@@ -61,6 +61,8 @@ router.post(
       req.session.username = newUser.username;
       req.session.loggedIn = true;
     });
+    console.log("This is created user sess")
+    console.log(req.session.user_id);
     res.json([newUser, newWallet]);
   })
 );

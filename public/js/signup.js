@@ -17,9 +17,13 @@ const signupFormHandler = async function (event) {
       headers: { "Content-Type": "application/json" },
     });
 
+    alert("Post just happened")
+
     if (response.ok) {
+      alert("Res ok")
       document.location.replace("dashboard");
     } else {
+      alert("Res not ok")
       alert(response.statusText);
     }
   }
