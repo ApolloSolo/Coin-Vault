@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
 
 router.get("/dashboard", hasSess, async (req, res) => {
   res.render("dashboard", { loggedIn: req.session.loggedIn });
+  
 });
 
 module.exports = router;
