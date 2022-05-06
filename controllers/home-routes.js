@@ -31,6 +31,7 @@ router.get(
       ],
     });
 
+<<<<<<< HEAD
     if (!userData) {
       throw new ExpressError("Could no find user", 404);
     }
@@ -84,5 +85,11 @@ router.get(
     });
   })
 );
+=======
+router.get("/dashboard", hasSess, async (req, res) => {
+  res.render("dashboard", { loggedIn: req.session.loggedIn });
+  
+});
+>>>>>>> d66c6e0c2526230bb593da63e103a2153dd34f73
 
 module.exports = router;
