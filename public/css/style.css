@@ -148,6 +148,16 @@ header {
     
 }
 
+/* Dashboard Modal Styling */
 
+.form-select, .form-control {
+    font-family: OCR A Std, monospace;
+}
+
+.input-group-text {
+    font-family: OCR A Std, monospace;
+    background-color: rgb(13, 13, 13);
+    color:rgb(218, 199, 94);
+}
 
 
