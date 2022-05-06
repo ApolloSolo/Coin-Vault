@@ -17,14 +17,10 @@
       <div class="coin-name card col-3">
         <div class="coins-list-group card-header">COIN</div>
         <ul class="coin-list list-group list-group-flush">
-          <li id="BTC" class="list-group-item"><span><img src="/images/bitcoin-btc-logo.png"
-                class="icon ms-1 me-3"></span>BTC</li>
-          <li id="ETH" class="list-group-item"><span><img src="/images/ethereum-eth-logo.png"
-                class="icon ms-1 me-3"></span>ETH</li>
-          <li id="ATOM" class="list-group-item"><span><img src="/images/cosmos-atom-logo.png"
-                class="icon ms-1 me-3"></span>ATOM</li>
-          <li id="DOGE" class="list-group-item"><span><img src="/images/dogecoin-doge-logo.png"
-                class="icon ms-1 me-3"></span>DOGE</li>
+          {{#each coinData}}
+          <li id="{{this.symbol}}" class="list-group-item"><span><img src="/images/{{this.symbol}}.png"
+                class="icon ms-1 me-3"></span>{{this.symbol}}</li>
+          {{/each}}
         </ul>
       </div>
       <div class="coin-price card col-5">
@@ -40,8 +36,8 @@
         <ul class="coin-list list-group list-group-flush">
           <li id="BTC" class="list-group-item">{{userData.wallet.btc}}</li>
           <li id="ETH" class="list-group-item">{{userData.wallet.eth}}</li>
-          <li id="ATOM" class="list-group-item">{{userData.wallet.atom}}</li>
           <li id="DOGE" class="list-group-item">{{userData.wallet.doge}}</li>
+          <li id="ATOM" class="list-group-item">{{userData.wallet.atom}}</li>
         </ul>
       </div>
     </div>

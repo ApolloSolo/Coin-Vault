@@ -3,7 +3,7 @@ const catchAsyncError = require("../utils/catchAsyncError");
 const ExpressError = require("../utils/ExpressError");
 const { User, Wallet } = require("../models/");
 const hasSess = require("../utils/auth");
-const reducedCoinData = require('../public/js/coinranking');
+const reducedCoinData = require("../public/js/coinranking");
 
 // homepage
 router.get("/", (req, res, next) => {
@@ -36,39 +36,52 @@ router.get(
     }
 
     // Get money before updating money to include coin values
-    const currentFunds = await userData.money
-    
+    const currentFunds = await userData.money;
+
     const coinData = await reducedCoinData();
-    
+
     function getUserTickers(obj) {
       const userCoinKeys = Object.entries(obj);
       const userCoins = [];
-      for(let i = 0; i < userCoinKeys.length; i ++) {
-        if(parseFloat(userCoinKeys[i][1]) > 0) {
-          userCoins.push(userCoinKeys[i][0])
+      for (let i = 0; i < userCoinKeys.length; i++) {
+        if (parseFloat(userCoinKeys[i][1]) > 0) {
+          userCoins.push(userCoinKeys[i][0]);
         }
       }
       return userCoins;
     }
 
-    userData = await userData.get({ plain: true }); 
+    userData = await userData.get({ plain: true });
 
-    let tickers = getUserTickers(userData.wallet)
+    let tickers = getUserTickers(userData.wallet);
 
-    for(let i = 0; i < coinData.length; i++) {
-      for(let j = 0; j < tickers.length; j++) {
-        if(tickers[j].toUpperCase() == coinData[i].symbol) {
+    for (let i = 0; i < coinData.length; i++) {
+      for (let j = 0; j < tickers.length; j++) {
+        if (tickers[j].toUpperCase() == coinData[i].symbol) {
           let coinPrice = coinData[i].price;
-            console.log(coinPrice, coinData[i].symbol.toLowerCase());
-          let value = userData.wallet[coinData[i].symbol.toLowerCase()];
-          console.log(value)
+          //console.log(coinPrice, coinData[i].symbol.toLowerCase());
+          let coinsOwned = userData.wallet[coinData[i].symbol.toLowerCase()];
+          console.log(
+            coinsOwned +
+              " " +
+              coinData[i].symbol.toLowerCase() +
+              " at $ " +
+              coinPrice
+          );
+          userData.money = parseFloat(coinsOwned) * parseFloat(coinPrice) + parseFloat(userData.money);
+          userData.money = userData.money.toFixed(2) 
+          console.log(userData.money);
         }
       }
     }
-  
 
     console.log(coinData, userData, tickers);
-    res.render("dashboard", { loggedIn: req.session.loggedIn, userData, currentFunds, coinData });
+    res.render("dashboard", {
+      loggedIn: req.session.loggedIn,
+      userData,
+      currentFunds,
+      coinData,
+    });
   })
 );
 
