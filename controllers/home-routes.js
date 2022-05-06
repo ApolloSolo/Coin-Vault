@@ -11,6 +11,8 @@ router.get("/", (req, res, next) => {
     res.redirect("/dashboard");
     return;
   }
+  console.log("No session in home redirect to dash")
+  console.log(req.session.loggedIn)
   res.render("homepage", { loggedIn: req.session.loggedIn });
 });
 
