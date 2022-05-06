@@ -154,10 +154,19 @@ header {
     font-family: OCR A Std, monospace;
 }
 
-.input-group-text {
+.input-group-text, .price-label {
     font-family: OCR A Std, monospace;
     background-color: rgb(13, 13, 13);
     color:rgb(218, 199, 94);
 }
 
+.price-label {
+    padding: 5px;
+    border-radius: 5px;
+}
 
+.price {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
