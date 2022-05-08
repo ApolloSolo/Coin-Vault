@@ -28,14 +28,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="login-form">
+            <form class="login-form needs-validation" novalidate>
               <div class="form-group">
                 <label for="username" class="modal-labels">Username</label>
-                <input type="username" class="form-control" id="username" placeholder="Username">
+                <input type="username" class="form-control" id="username" placeholder="Username" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
               </div>
               <div class="form-group">
                 <label for="password" class="modal-labels">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" placeholder="Password" pattern=".{6,10}" required title="6 to 10 characters">
               </div>
               <button type="submit" class="btn modal-btn d-block ms-auto mt-2" data-bs-dismiss="modal">Login</button>
             </form>
@@ -56,19 +59,28 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="register-form">
+            <form class="register-form needs-validation" novalidate>
               <div class="form-group">
                 <label for="username-1" class="modal-labels"> Please Choose a Username</label>
-                <input type="username" class="form-control" id="username-1" placeholder="Username">
+                <input type="username" class="form-control" id="username-1" placeholder="Username" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
               </div>
               <div class="form-group">
                 <label for="email-1" class="modal-labels">Enter Your Email Address</label>
-                <input type="email" class="form-control" id="email-1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="email-1" aria-describedby="emailHelp" placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
               </div>
               <div class="form-group">
                 <label for="password-1" class="modal-labels"> Please Choose a Password (6-10 Characters)</label>
-                <input type="password" class="form-control" id="password-1" placeholder="Password">
+                <input type="password" class="form-control" id="password-1" placeholder="Password" pattern=".{6,10}" required title="6 to 10 characters">
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
               </div>
               <button type="submit" class="btn modal-btn" data-dismiss="modal">Register</button>
             </form>
@@ -82,3 +94,4 @@
 
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
+<script src="/js/form-validation.js"></script>
