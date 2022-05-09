@@ -78,8 +78,9 @@ body {
     color: var(--gold);
 }
 
-/* Dashboard Styling */
+/* DASHBOARD STYLING */
 
+/* Dashboard Header Styling */
 .dashboard-header-group {
     background-color: var(--black);
 }
@@ -102,6 +103,8 @@ body {
     padding: 10px 30px;
     margin: 40px  
 }
+
+/* User Card Styling */
 
 .user-card {
     background-color: var(--black);
@@ -147,6 +150,8 @@ body {
 .cards {
     padding: 0px 40px 40px 40px
 }
+
+/* Dashboard Modal Styling */
 
 .card-header {
     background-color: var(--black);
