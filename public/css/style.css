@@ -1,10 +1,16 @@
+:root {
+    --black: rgba(13, 13, 13, 0.904);
+    --gold: rgb(218, 199, 94);
+    --gray: rgb(208,208,210);
+}
+
 body {
     background-image: url('/images/cryptocurrencies3.jpg');
 }
 
 /* Homepage Styling */
 .main-header-group {
-    background-color: rgba(13, 13, 13, 0.904);;
+    background-color: rgba(13, 13, 13, 0.904);
     padding: 30px;
     border-radius: 15px;
     width: 60%;
@@ -18,24 +24,24 @@ body {
 .main-header-top, .main-header-bottom {
     font-family: Blippo, fantasy;
     font-size: 125px;
-    color: rgb(218, 199, 94)
+    color: var(--gold);
 }
 
 .secondary-header {
     font-family: OCR A Std, monospace;
     font-size: 40px;
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     padding: 30px;
     font-weight: bold;
     border-radius: 15px;
-    color: rgb(218, 199, 94)
+    color: var(--gold);
 }
 
 .login-btn, .register-btn {
     font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(218, 199, 94);
-    background-color:rgb(13, 13, 13);
+    color: var(--gold);
+    background-color:var(--black);
     padding: 10px 30px;
     margin: 40px  
 }
@@ -43,21 +49,21 @@ body {
 /* Register and Login Modal Styling */
 
 .modal-header {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
 }
 
 .modal-title {
     font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .btn-close {
-    background-color:rgb(218, 199, 94);
+    background-color: var(--gold);
 }
 
 .modal-content {
-    background-color: rgb(208,208,210);
+    background-color: var(--gray);
 }
 
 .modal-labels {
@@ -66,22 +72,22 @@ body {
 }
 
 .modal-btn {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     font-family: Blippo, fantasy;
     font-size: 25px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 /* Dashboard Styling */
 
-header {
-    background-color: rgb(13, 13, 13);
+.dashboard-header-group {
+    background-color: var(--black);
 }
 
 .dashboard-header {
     font-family: Blippo, fantasy;
     font-size: 75px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .header-img {
@@ -91,15 +97,27 @@ header {
 .logout-btn {
     font-family: Blippo, fantasy;
     font-size: 30px;
-    color:rgb(13, 13, 13);
-    background-color:rgb(218, 199, 94);
+    color:var(--black);
+    background-color: var(--gold);
     padding: 10px 30px;
     margin: 40px  
 }
 
 .user-card {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     border-radius: 15px;
+}
+
+.circle-img {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+  
+.circle-img img {
+    height: 100%;
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
 
 .avatar {
@@ -107,7 +125,7 @@ header {
 }
 
 .coin-list {
-    background-color: rgb(208,208,210);
+    background-color: var(--gray);
 }
 
 .icon {
@@ -117,13 +135,13 @@ header {
 .username {
     font-family: Blippo, fantasy;
     font-size: 60px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .user-info-text {
     font-family: OCR A Std, monospace;
     font-size: 20px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .cards {
@@ -131,10 +149,10 @@ header {
 }
 
 .card-header {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     font-family: OCR A Std, monospace;
     font-size: 20px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
     text-align: center;
     font-weight: bold;
 }
@@ -142,7 +160,7 @@ header {
 .list-group-item {
     font-family: OCR A Std, monospace;
     font-size: 40px;
-    color:rgb(13, 13, 13);
+    color:var(--black);
     text-align: center;
     font-weight: bold;
     height: 158px;
@@ -154,8 +172,8 @@ header {
 
 .input-group-text, .price-label {
     font-family: OCR A Std, monospace;
-    background-color: rgb(13, 13, 13);
-    color:rgb(218, 199, 94);
+    background-color: var(--black);
+    color: var(--gold);
 }
 
 .price-label {

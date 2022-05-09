@@ -1,4 +1,4 @@
-<header class="d-flex justify-content-between">
+<header class="d-flex justify-content-between dashboard-header-group">
   <h1 class="dashboard-header m-4"><img src="/images/safe.png" class="header-img me-3"></span>Coin Vault</h1>
   <button type="button" id="logout" class="logout-btn btn btn-secondary ">Logout</button>
 </header>
@@ -6,7 +6,9 @@
 <main class="d-flex justify-content-center">
   <div class="user-card m-5">
     <div class="user-info d-flex flex-row m-5">
-      <img src="https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png" class="avatar"></img>
+      <div class="circle-img rounded-circle">
+        <img src="https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png" class="avatar" alt="User avatar"></img>
+      </div>
       <div class="user-info-text d-flex flex-column m-5">
         <h1 class="username pb-4">{{userData.username}}</h1>
         <h2 class="funds pb-3">Funds Available: $ <span>{{currentFunds}}</span></h2>
