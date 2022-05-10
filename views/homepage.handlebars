@@ -32,13 +32,16 @@
               <div class="form-group">
                 <label for="username" class="modal-labels">Username</label>
                 <input type="username" class="form-control" id="username" placeholder="Username" required>
-                <div class="valid-feedback">
-                  Looks good!
+                <div class="invalid-feedback">
+                  Please enter your username.
                 </div>
               </div>
               <div class="form-group">
                 <label for="password" class="modal-labels">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" pattern=".{6,10}" required title="6 to 10 characters">
+                <input type="password" class="form-control" id="password" placeholder="Password" pattern=".{4,10}" required title="4 to 10 characters">
+                <div class="invalid-feedback">
+                  Please enter your password.
+                </div>
               </div>
               <button type="submit" class="btn modal-btn d-block ms-auto mt-2" data-bs-dismiss="modal">Login</button>
             </form>
@@ -76,8 +79,8 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="password-1" class="modal-labels"> Please Choose a Password (6-10 Characters)</label>
-                <input type="password" class="form-control" id="password-1" placeholder="Password" pattern=".{6,10}" required title="6 to 10 characters">
+                <label for="password-1" class="modal-labels"> Please Choose a Password (4-10 Characters)</label>
+                <input type="password" class="form-control" id="password-1" placeholder="Password" pattern=".{4,10}" required title="4 to 10 characters">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -90,8 +93,10 @@
     </div>
   </div>
    
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="/js/form-validation.js"></script>
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
-<script src="/js/form-validation.js"></script>
