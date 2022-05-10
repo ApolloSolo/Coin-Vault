@@ -27,17 +27,17 @@
         <div class="coins-list-group card-header">PRICE</div>
         <ul class="coin-list list-group list-group-flush">
           {{#each coinData}}
-          <li id="{{this.symbol}}" class="list-group-item">$ {{this.price}} </li>
+          <li class="list-group-item">$ {{this.price}} </li>
           {{/each}}
         </ul>
       </div>
       <div class="coin-number card col-4">
         <div class="coins-list-group card-header">COIN NUMBER</div>
         <ul class="coin-list list-group list-group-flush">
-          <li id="BTC" class="list-group-item">{{userData.wallet.btc}}</li>
-          <li id="ETH" class="list-group-item">{{userData.wallet.eth}}</li>
-          <li id="DOGE" class="list-group-item">{{userData.wallet.doge}}</li>
-          <li id="ATOM" class="list-group-item">{{userData.wallet.atom}}</li>
+          <li class="list-group-item">{{userData.wallet.btc}}</li>
+          <li class="list-group-item">{{userData.wallet.eth}}</li>
+          <li class="list-group-item">{{userData.wallet.doge}}</li>
+          <li class="list-group-item">{{userData.wallet.atom}}</li>
         </ul>
       </div>
     </div>

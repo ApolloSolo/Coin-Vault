@@ -54,6 +54,8 @@ router.get(
     // Update user valuation with coin values + funds available
     userData = calcUserValuation(coinData, tickers, userData);
 
+    console.log(coinData);
+
     res.render("dashboard", {
       loggedIn: req.session.loggedIn,
       userData,
@@ -62,5 +64,28 @@ router.get(
     });
   })
 );
+
+router.get(
+  "/sell",
+  hasSess,
+  catchAsyncError(async (req, res) => {
+    let userData = await User.findOne({
+      attributes: { exclude: ["password"] },
+      where: {
+        id: req.session.user_id,
+      },
+      include: [
+        {
+          model: Wallet,
+          attributes: ["btc", "eth", "atom", "doge"],
+        },
+      ],
+    });
+    userData = await userData.get({ plain: true });
+    res.render("sell", { userData, loggedIn: req.session.loggedIn });
+  })
+);
+
+
 
 module.exports = router;
