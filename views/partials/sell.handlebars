@@ -1,19 +1,40 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <img src="/images/safe.png" alt="Picture of a bank vault" height="70" class="d-inline-block align-text-top">
+            Coin Vault
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link mx-2" href="#">Home</a>
+                <a class="nav-link mx-2" href="#">Dashboard</a>
+                <a class="nav-link mx-2" href="#">Buy</a>
+                <a class="nav-link mx-2 active" aria-current="page" href="#">Sell</a>
+                <a class="nav-link mx-2" href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <div class="container-fluid p-3 h-100">
     <div class="row justify-content-center h-100">
         <div id="market-coins" class="col-12 col-lg-6">
-            <h2 class="text-center">Sell Assets</h2>
+            <h2 class="text-center sell-heading">Sell Assets</h2>
             <div class="card">
-                <img src=""
-                    class="card-img-top" alt="bitcoin">
+                <img src="" class="card-img-top" alt="bitcoin">
                 <div id="dash" class="card-body">
                     <div class="text-center">
-                        <h5>Current Funds</h5>
+                        <h5 class="sell-card-header">Current Funds</h5>
                         <p data-id="{{userData.id}}" id="userFunds">{{userData.money}}</p>
                     </div>
                     <form id="buyForm" class="signup-form mb-auto p-3">
                         <div class="mb-3">
                             <label class="form-label" for="coin">Sell</label>
-                            <select id="coinSelect" class="form-select" aria-label="Default select example">         
+                            <select id="coinSelect" class="form-select" aria-label="Default select example">
                                 <option data-userQuantity="{{userData.wallet.btc}}" value="btc">Bitcoin</option>
                                 <option data-userQuantity="{{userData.wallet.eth}}" value="eth">Ethereum</option>
                                 <option data-userQuantity="{{userData.wallet.atom}}" value="eth">Atom</option>
@@ -29,7 +50,7 @@
                             <input class="form-control" type="text" id="total" disabled />
                         </div>
                         <div class="bottom-peak d-grid gap-2 col-6 mx-auto">
-                            <button id="buy-btn" class="btn btn-info disabled" type="submit">Sell</button>
+                            <button id="sell-btn" class="btn disabled" type="submit">Sell</button>
                         </div>
                     </form>
                 </div>

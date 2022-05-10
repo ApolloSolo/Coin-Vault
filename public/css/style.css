@@ -8,6 +8,34 @@ body {
     background-image: url('/images/cryptocurrencies3.jpg');
 }
 
+/* Navbar Styling */
+
+.navbar {
+    background-color: rgb(13, 13, 13);
+}
+
+.navbar-brand {
+    font-family: Blippo, fantasy;
+    font-size: 60px;
+    color: rgb(218, 199, 94)
+}
+
+
+.nav-link {
+    font-family: Blippo, fantasy;
+    font-size: 30px;
+    background-color: rgb(13, 13, 13);
+    border-radius: 15px;
+    color: rgb(218, 199, 94)
+}
+
+.nav-link:hover {
+    background-color:rgb(218, 199, 94);
+    color:rgb(13, 13, 13);
+    border-radius: 15px;
+}
+
+
 /* Homepage Styling */
 .main-header-group {
     background-color: rgba(13, 13, 13, 0.904);
@@ -151,43 +179,45 @@ body {
     padding: 0px 40px 40px 40px
 }
 
-/* Dashboard Modal Styling */
+/* Buy & Sell Page styling */
 
-.card-header {
-    background-color: var(--black);
-    font-family: OCR A Std, monospace;
-    font-size: 20px;
-    color: var(--gold);
-    text-align: center;
-    font-weight: bold;
-}
-
-.list-group-item {
-    font-family: OCR A Std, monospace;
+.sell-heading {
+    font-family: Blippo, fantasy;
     font-size: 40px;
-    color:var(--black);
-    text-align: center;
-    font-weight: bold;
-    height: 158px;
+    color:rgb(218, 199, 94);
+    background-color: rgb(13, 13, 13);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
 }
 
-.form-select, .form-control {
+.form-label {
+    font-family: Blippo, fantasy;
+    font-size: 25px;
+    color: rgb(218, 199, 94)
+}
+
+.card {
+    background-color: rgb(13, 13, 13);
+    border-radius: 15px;
+}
+
+.sell-card-header, .buy-card-header {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color:rgb(218, 199, 94);
+}
+
+#userFunds {
     font-family: OCR A Std, monospace;
+    color:rgb(218, 199, 94);
+    font-size: 25px;
 }
 
-.input-group-text, .price-label {
-    font-family: OCR A Std, monospace;
-    background-color: var(--black);
-    color: var(--gold);
-}
-
-.price-label {
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.price {
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
+#sell-btn, #buy-btn {
+    font-family: Blippo, fantasy;
+    font-size: 30px;
+    color:rgb(13, 13, 13);
+    background-color:rgb(218, 199, 94);
+    margin-top: 20px;
 }
