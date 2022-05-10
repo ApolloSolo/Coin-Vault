@@ -1,0 +1,39 @@
+<div class="container-fluid p-3 h-100">
+    <div class="row justify-content-center h-100">
+        <div id="market-coins" class="col-12 col-lg-6">
+            <h2 class="text-center">Sell Assets</h2>
+            <div class="card">
+                <img src=""
+                    class="card-img-top" alt="bitcoin">
+                <div id="dash" class="card-body">
+                    <div class="text-center">
+                        <h5>Current Funds</h5>
+                        <p data-id="{{userData.id}}" id="userFunds">{{userData.money}}</p>
+                    </div>
+                    <form id="buyForm" class="signup-form mb-auto p-3">
+                        <div class="mb-3">
+                            <label class="form-label" for="coin">Sell</label>
+                            <select id="coinSelect" class="form-select" aria-label="Default select example">         
+                                <option data-userQuantity="{{userData.wallet.btc}}" value="btc">Bitcoin</option>
+                                <option data-userQuantity="{{userData.wallet.eth}}" value="eth">Ethereum</option>
+                                <option data-userQuantity="{{userData.wallet.atom}}" value="eth">Atom</option>
+                                <option data-userQuantity="{{userData.wallet.doge}}" value="doge">Doge</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="quantity">Quantity</label>
+                            <input class="form-control" type="number" id="quantity" step='0.0001' />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="total">Total</label>
+                            <input class="form-control" type="text" id="total" disabled />
+                        </div>
+                        <div class="bottom-peak d-grid gap-2 col-6 mx-auto">
+                            <button id="buy-btn" class="btn btn-info disabled" type="submit">Sell</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
