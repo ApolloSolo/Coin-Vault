@@ -22,59 +22,82 @@ function updateTotal(price) {
 
 async function sellCoins(event) {
   event.preventDefault();
+  
+  //Get total value of coins
   let total = document.getElementById("total").value;
+  total = parseFloat(total);
+
+  //Get user's current funds to calc money after sell
   let userFunds = document.getElementById("userFunds").innerText;
-  let coin = document.getElementById("coinSelect");
-  let coinTicker = coin.options[coin.selectedIndex].value;
-  const userID = document.getElementById("userFunds").dataset.id;
   userFunds = parseFloat(userFunds);
+
+  //Get the select element to then get selected option attributes
+  let coin = document.getElementById("coinSelect");
+
+  //The current number of coins the user has before sell
+  let currentQuantity = coin.options[coin.selectedIndex].dataset.userquantity;
+
+  //Get number of coins user intends to sell
+  let sellQuantity = document.getElementById("quantity").value;
+
+  //Get coin name to than use in if statments to create put request
+  let coinTicker = coin.options[coin.selectedIndex].innerText;
+
+  //Get user's id to update correct user in DB
+  const userID = document.getElementById("userFunds").dataset.id;
+
+  //Remaining coins after user has sold
+  let coinsRemaining = currentQuantity - sellQuantity;
+
+  //Calc user's money based on sell and current funds
   let sumOfSell = userFunds + total;
+  
 
-  let putCoin = {};
+ let putCoin = {};
 
-  if (coinTicker === "Doge") {
-    putCoin = {
-      method: "PUT",
-      body: JSON.stringify({
-        doge: total,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-  } else if (coinTicker === "Bitcoin") {
-    putCoin = {
-      method: "PUT",
-      body: JSON.stringify({
-        btc: total,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-  } else if (coinTicker === "Ethereum") {
-    putCoin = {
-      method: "PUT",
-      body: JSON.stringify({
-        eth: total,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-  } else if (coinTicker === "Atom") {
-    putCoin = {
-      method: "PUT",
-      body: JSON.stringify({
-        atom: total,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-  }
+ if (coinTicker === "Doge") {
+   putCoin = {
+     method: "PUT",
+     body: JSON.stringify({
+       doge: coinsRemaining,
+     }),
+     headers: {
+       "Content-Type": "application/json",
+     },
+   };
+ } else if (coinTicker === "Bitcoin") {
+   putCoin = {
+     method: "PUT",
+     body: JSON.stringify({
+       btc: coinsRemaining,
+     }),
+     headers: {
+       "Content-Type": "application/json",
+     },
+   };
+ } else if (coinTicker === "Ethereum") {
+   putCoin = {
+     method: "PUT",
+     body: JSON.stringify({
+       eth: coinsRemaining,
+     }),
+     headers: {
+       "Content-Type": "application/json",
+     },
+   };
+ } else if (coinTicker === "Atom") {
+   putCoin = {
+     method: "PUT",
+     body: JSON.stringify({
+       atom: coinsRemaining,
+     }),
+     headers: {
+       "Content-Type": "application/json",
+     },
+   };
+ }
 
-  const response = await fetch(`/api/wallet/${userID}`, putCoin);
+ const response = await fetch(`/api/wallet/${userID}`, putCoin);
 
   const userUpdate = await fetch(`/api/user/${userID}`, {
     method: "PUT",
@@ -85,11 +108,11 @@ async function sellCoins(event) {
       "Content-Type": "application/json",
     },
   });
-  if (userUpdate.ok) {
-    document.location.replace("/dashboard");
-  } else {
-    alert(response.statusText);
-  }
+ if (response.ok && userUpdate.ok) {
+   document.location.replace("/dashboard");
+ } else {
+   console.log(response.statusText);
+ }
 }
 
 document.querySelector("#coinSelect").addEventListener("change", defaultAmount);

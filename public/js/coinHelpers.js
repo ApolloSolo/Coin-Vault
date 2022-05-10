@@ -15,8 +15,9 @@ function calcUserValuation(coinArray, tickerArray, userObj) {
       if (tickerArray[j].toUpperCase() == coinArray[i].symbol) {
         let coinPrice = coinArray[i].price;
         let coinsOwned = userObj.wallet[coinArray[i].symbol.toLowerCase()];
+        let userMoney = parseFloat(userObj.money)
         userObj.money =
-          parseFloat(coinsOwned * coinPrice + userObj.money);
+          parseFloat(coinsOwned * coinPrice) + userMoney;
         userObj.money = userObj.money.toFixed(2);
       }
     }
