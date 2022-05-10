@@ -1,0 +1,170 @@
+body {
+    background-image: url('/images/cryptocurrencies3.jpg');
+}
+
+/* Homepage Styling */
+.main-header-group {
+    background-color: rgba(13, 13, 13, 0.904);;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    margin: 60px auto 20px auto
+}
+
+.vault {
+    max-height: 250px;
+}
+
+.main-header-top, .main-header-bottom {
+    font-family: Blippo, fantasy;
+    font-size: 125px;
+    color: rgb(218, 199, 94)
+}
+
+.secondary-header {
+    font-family: OCR A Std, monospace;
+    font-size: 40px;
+    background-color: rgb(13, 13, 13);
+    padding: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: rgb(218, 199, 94)
+}
+
+.login-btn, .register-btn {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color:rgb(218, 199, 94);
+    background-color:rgb(13, 13, 13);
+    padding: 10px 30px;
+    margin: 40px  
+}
+
+/* Register and Login Modal Styling */
+
+.modal-header {
+    background-color: rgb(13, 13, 13);
+}
+
+.modal-title {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color:rgb(218, 199, 94);
+}
+
+.btn-close {
+    background-color:rgb(218, 199, 94);
+}
+
+.modal-content {
+    background-color: rgb(208,208,210);
+}
+
+.modal-labels {
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+}
+
+.modal-btn {
+    background-color: rgb(13, 13, 13);
+    font-family: Blippo, fantasy;
+    font-size: 25px;
+    color:rgb(218, 199, 94);
+}
+
+/* Dashboard Styling */
+
+header {
+    background-color: rgb(13, 13, 13);
+}
+
+.dashboard-header {
+    font-family: Blippo, fantasy;
+    font-size: 75px;
+    color:rgb(218, 199, 94);
+}
+
+.header-img {
+    max-height: 100px
+}
+
+.logout-btn {
+    font-family: Blippo, fantasy;
+    font-size: 30px;
+    color:rgb(13, 13, 13);
+    background-color:rgb(218, 199, 94);
+    padding: 10px 30px;
+    margin: 40px  
+}
+
+.user-card {
+    background-color: rgb(13, 13, 13);
+    border-radius: 15px;
+}
+
+.avatar {
+    max-height: 300px;
+}
+
+.coin-list {
+    background-color: rgb(208,208,210);
+}
+
+.icon {
+    max-height: 50px
+}
+
+.username {
+    font-family: Blippo, fantasy;
+    font-size: 60px;
+    color:rgb(218, 199, 94);
+}
+
+.user-info-text {
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+    color:rgb(218, 199, 94);
+}
+
+.cards {
+    padding: 0px 40px 40px 40px
+}
+
+.card-header {
+    background-color: rgb(13, 13, 13);
+    font-family: OCR A Std, monospace;
+    font-size: 20px;
+    color:rgb(218, 199, 94);
+    text-align: center;
+    font-weight: bold;
+}
+
+.list-group-item {
+    font-family: OCR A Std, monospace;
+    font-size: 40px;
+    color:rgb(13, 13, 13);
+    text-align: center;
+    font-weight: bold;
+    height: 158px;
+}
+
+.form-select, .form-control {
+    font-family: OCR A Std, monospace;
+}
+
+.input-group-text, .price-label {
+    font-family: OCR A Std, monospace;
+    background-color: rgb(13, 13, 13);
+    color:rgb(218, 199, 94);
+}
+
+.price-label {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.price {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}

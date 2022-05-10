@@ -1,0 +1,85 @@
+
+
+  
+  <header class="header-container d-flex flex-column">
+    <div class="main-header-group d-flex justify-content-center align-items-center">
+      <img class="vault" src="/images/safe.png" alt="Picture of bank safe"/>
+      <div class="d-flex flex-column mx-4" >
+        <h1 class="main-header-top display-1 mb-0">Coin</h1>
+        <h1 class="main-header-bottom display-1 mt-0">Vault</h1>
+      </div>
+    </div>
+    
+    <div>
+      <h2 class="secondary-header">Buy and sell cryptocurrency without the risk!</h2>
+    </div>
+  </header>
+  
+  <div class="buttons d-inline-flex justify-content-center">
+    <!--Button to Login-->
+    <button type="button" class="login-btn btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    
+    <!--  Login Modal -->
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="login-form" >
+              <div class="form-group">
+                <label for="username" class="modal-labels">Username</label>
+                <input type="username" class="form-control" id="username" placeholder="Username">
+                
+              </div>
+              <div class="form-group">
+                <label for="password" class="modal-labels">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn modal-btn d-block ms-auto mt-2" data-bs-dismiss="modal">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--Button to Login-->
+    <button type="button" class="register-btn btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+    
+    <!-- Register Modal -->
+    <div class="modal fade registerModal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="register-form">
+              <div class="form-group">
+                <label for="username-1" class="modal-labels"> Please Choose a Username</label>
+                <input type="username" class="form-control" id="username-1" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <label for="email-1" class="modal-labels">Enter Your Email Address</label>
+                <input type="email" class="form-control" id="email-1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="password-1" class="modal-labels"> Please Choose a Password (6-10 Characters)</label>
+                <input type="password" class="form-control" id="password-1" placeholder="Password">
+              </div>
+              <button type="submit" class="btn modal-btn" data-dismiss="modal">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>

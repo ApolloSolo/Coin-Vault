@@ -19,19 +19,19 @@ Wallet.init(
       },
     },
     btc: {
-        type: DataTypes.DECIMAL(10,4),
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
     },
     eth: {
-        type: DataTypes.DECIMAL(10,4),
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
     },
     atom: {
-        type: DataTypes.DECIMAL(10,4),
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
     },
     doge: {
-        type: DataTypes.DECIMAL(10,4),
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
     },
   },
