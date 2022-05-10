@@ -11,27 +11,27 @@ body {
 /* Navbar Styling */
 
 .navbar {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
 }
 
 .navbar-brand {
     font-family: Blippo, fantasy;
     font-size: 60px;
-    color: rgb(218, 199, 94)
+    color:  var(--gold);
 }
 
 
 .nav-link {
     font-family: Blippo, fantasy;
     font-size: 30px;
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     border-radius: 15px;
-    color: rgb(218, 199, 94)
+    color:  var(--gold);
 }
 
 .nav-link:hover {
-    background-color:rgb(218, 199, 94);
-    color:rgb(13, 13, 13);
+    background-color: var(--gold);
+    color: var(--black);
     border-radius: 15px;
 }
 
@@ -184,8 +184,8 @@ body {
 .sell-heading {
     font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(218, 199, 94);
-    background-color: rgb(13, 13, 13);
+    color: var(--gold);
+    background-color: var(--black);
     border-radius: 15px;
     margin: 20px;
     padding: 20px;
@@ -194,30 +194,30 @@ body {
 .form-label {
     font-family: Blippo, fantasy;
     font-size: 25px;
-    color: rgb(218, 199, 94)
+    color:  var(--gold);
 }
 
 .card {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     border-radius: 15px;
 }
 
 .sell-card-header, .buy-card-header {
     font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 #userFunds {
     font-family: OCR A Std, monospace;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
     font-size: 25px;
 }
 
 #sell-btn, #buy-btn {
     font-family: Blippo, fantasy;
     font-size: 30px;
-    color:rgb(13, 13, 13);
-    background-color:rgb(218, 199, 94);
+    color:var(--black);
+    background-color: var(--gold);
     margin-top: 20px;
 }
