@@ -109,6 +109,26 @@ router.post("/logout", (req, res, next) => {
   }
 });
 
+router.put("/:id", (req, res) => {
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((userData) => {
+      if (!userData[0]) {
+        res.status(404).json({ message: "No user found with this id" });
+        return;
+      }
+      res.json(userData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 //Delete User By ID
 router.delete(
   "/:id",

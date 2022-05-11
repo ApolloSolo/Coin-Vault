@@ -31,7 +31,7 @@ router.get(
       include: [
         {
           model: Wallet,
-          attributes: ["btc", "eth", "atom", "doge"],
+          attributes: ["btc", "eth", "doge", "atom"],
         },
       ],
     });
@@ -81,8 +81,19 @@ router.get(
         },
       ],
     });
+
+    const coinData = await reducedCoinData();
+    console.log(coinData)
+
+    let coinPrice = {
+      btc: coinData[0].price,
+      eth: coinData[1].price,
+      doge: coinData[2].price,
+      atom: coinData[3].price
+    }
+
     userData = await userData.get({ plain: true });
-    res.render("sell", { userData, loggedIn: req.session.loggedIn });
+    res.render("sell", { userData, loggedIn: req.session.loggedIn, coinPrice });
   })
 );
 
