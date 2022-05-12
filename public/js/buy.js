@@ -1,6 +1,20 @@
 //async function --> coin amounts are changed when the user hits coinSelect
+//select price amount--> this will give us the current price of the coin. 
+//select quantity amount--> this will give us the amount that the user wants to purchase
+//finding the value of the price and quantity will give us the current user's price/quantity
+async function startingAmount() {
+    let coin = document.getElementById('coinSelect');
+    console.log(coin);
+}
 
 //quantity changes when the user selects how many coins they want to purchase
+//updating the total amount--> multiply the price by the quantity in order to find the correct amount that the user wishes to purchase
+function getTotal() {
+    let total = document.getElementById('total');
+    console.log(total);
+
+    //remove 'disabled' class from 'total'
+}
 
 function buyCoin(event) {
     event.preventDefault();
@@ -89,6 +103,7 @@ function buyCoin(event) {
 }
 
 //document.querySelector/aEL for when the user hits coinSelect
+document.querySelector('#coinSelect').addEventListener('change', startingAmount);
 //document.querySelector/aEL for when the user changes the quantity
 //document.querySelector/aEL for the buyForm id that executes the buyCoin function
 document.querySelector('#buyForm').addEventListener('submit', buyCoin);
