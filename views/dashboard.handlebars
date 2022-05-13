@@ -9,7 +9,8 @@
   <div class="user-card m-5">
     <div class="user-info d-flex flex-row m-5">
       <div class="circle-img rounded-circle">
-        <img src="https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png" class="avatar" alt="User avatar"></img>
+        <img src="https://avatarairlines.com/wp-content/uploads/2020/05/Female-Placeholder.png" class="avatar"
+          alt="User avatar"></img>
       </div>
       <div class="user-info-text d-flex flex-column m-5">
         <h1 class="username pb-4">{{userData.username}}</h1>
@@ -48,33 +49,35 @@
   </div>
 </main>
 
-<!-- Buy & Sell Buttons -->
+<!-- Transaction Button & Modal -->
 <div class="buttons d-inline-flex justify-content-center">
-  <!-- Button to Buy -->
-  <button type="button" class="buy-btn btn btn-dark btn-lg" data-bs-toggle="modal"
-    data-bs-target="#buyModal">BUY</button>
-  <!-- Buy Modal -->
+  <!-- Transaction Button -->
+  <button type="button" class="buy-btn btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#buyModal">Complete
+    Transactions</button>
+  <!-- Transaction Modal -->
   <div class="modal fade buy-modal" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Buy Cryptocurrency</h5>
+          <h5 class="modal-title">Which Transaction?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <div class="modal-footer">
-          <a href="/sell" class="card-link">Buy Coins</a>
+        <div class="modal-footer d-flex justify-content-center">
+          <a href="/buy" class="btn modal-btn">Buy Assets</a>
         </div>
-        <div class="modal-footer">
-          <a href="/sell" class="card-link">Sell Coins</a>
+        <div class="modal-footer d-flex justify-content-center">
+          <a href="/sell" class="btn modal-btn">Sell Assets</a>
         </div>
-
+      </div>
+    </div>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-  {{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
+      {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+      {{/if}}

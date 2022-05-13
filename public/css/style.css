@@ -155,6 +155,13 @@ body {
     max-height: 300px;
 }
 
+.coins-list-group {
+    font-family: Blippo, fantasy;
+    font-size: 25px;
+    color: var(--gold);
+    text-align: center;
+}
+
 .coin-list {
     background-color: var(--gray);
 }
@@ -166,7 +173,7 @@ body {
 .list-group-item {
     font-family: OCR A Std, monospace;
     font-size: 40px;
-    color:rgb(13, 13, 13);
+    color: var(--black);
     text-align: center;
     font-weight: bold;
     height: 158px;
@@ -191,6 +198,16 @@ body {
 .cards {
     padding: 0px 40px 40px 40px
 }
+
+.buy-btn {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color: var(--gold);
+    background-color:var(--black);
+    padding: 10px 30px;
+    margin: 40px  
+}
+
 
 /* Buy & Sell Page styling */
 
