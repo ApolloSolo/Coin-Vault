@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link mx-2" href="/">Home</a>
-                <a class="nav-link mx-2" href="/dashboard">Dashboard</a>
+                <a class="nav-link mx-2" href="/dashboard">Dashboard</a>                                                                                                                     
             </div>
         </div>
     </div>
@@ -20,42 +20,42 @@
 <div class="container-fluid p-3 h-100">
     <div class="row justify-content-center h-100">
         <div id="market-coins" class="col-12 col-lg-6">
-            <h2 class="text-center sell-heading">Sell Assets</h2>
+            <h2 class="text-center sell-heading">Buy Assets</h2>
             <div class="card">
                 <div id="dash" class="card-body">
                     <div class="text-center">
-                        <h5 class="sell-card-header">Current Funds</h5>
+                        <h5 class="buy-card-header">Current Funds</h5>
                         <p data-id="{{userData.id}}" id="userFunds">{{userData.money}}</p>
                     </div>
                     <form id="buyForm" class="signup-form mb-auto p-3">
                         <div class="mb-3">
-                            <label class="form-label" for="coin">Sell</label>
+                            <label class="form-label" for="coin">Buy</label>
                             <select id="coinSelect" class="form-select" aria-label="Default select example">
                                 <option>Select</option>
-                                <option data-userQuantity="{{userData.wallet.btc}}" value="{{coinPrice.btc}}">Bitcoin
-                                </option>
-                                <option data-userQuantity="{{userData.wallet.eth}}" value="{{coinPrice.eth}}">Ethereum
-                                </option>
-                                <option data-userQuantity="{{userData.wallet.doge}}" value="{{coinPrice.doge}}">Doge
-                                </option>
-                                <option data-userQuantity="{{userData.wallet.atom}}" value="{{coinPrice.atom}}">Atom
-                                </option>
+                                <option data-symbol="btc" data-userQuantity="{{userData.wallet.btc}}"  value="{{coinPrice.btc}}">Bitcoin</option>
+                                <option data-symbol="eth" data-userQuantity="{{userData.wallet.eth}}"  value="{{coinPrice.eth}}">Ethereum</option>
+                                <option data-symbol="doge" data-userQuantity="{{userData.wallet.doge}}"  value="{{coinPrice.doge}}">Doge</option>
+                                <option data-symbol="atom" data-userQuantity="{{userData.wallet.atom}}"  value="{{coinPrice.atom}}">Atom</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="price">Price Per Coin</label>
-                            <input class="form-control" type="number" id="price" step='0.01' min="0"/>
+
+                        <div class="d-flex justify-content-evenly flex-wrap">
+                            <div class="mb-3">
+                                <label class="form-label d-block text-center" for="quantity">Quantity</label>
+                                <input class="form-control" type="number" id="quantity" step='0.01' min="0" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label d-block text-center" for="market-value">Market Value</label>
+                                <input class="form-control" type="number" id="market-value" step='0.01' min="0" />
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="quantity">Quantity</label>
-                            <input class="form-control" type="number" id="quantity" step='0.01' min="0"/>
-                        </div>
+
                         <div class="mb-3">
                             <label class="form-label" for="total">Total</label>
                             <input class="form-control" type="text" id="total" disabled />
                         </div>
                         <div class="bottom-peak d-grid gap-2 col-6 mx-auto">
-                            <button id="buy-btn" class="btn btn-info disabled" type="submit">Sell</button>
+                            <button id="buy-btn" class="btn disabled" type="submit">Buy</button>
                         </div>
                     </form>
                 </div>
@@ -64,5 +64,4 @@
     </div>
 </div>
 
-
-<script src="/js/sell.js"></script>
+<script src="/js/buy.js"></script>

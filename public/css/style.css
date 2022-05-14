@@ -1,13 +1,46 @@
+:root {
+    --black: rgba(13, 13, 13, 0.904);
+    --gold: rgb(218, 199, 94);
+    --gray: rgb(208,208,210);
+}
+
 body {
     background-image: url('/images/cryptocurrencies3.jpg');
 }
 
+/* Navbar Styling */
+
+.navbar {
+    background-color: var(--black);
+}
+
+.navbar-brand {
+    font-family: Blippo, fantasy;
+    font-size: 60px;
+    color:  var(--gold);
+}
+
+
+.nav-link {
+    font-family: Blippo, fantasy;
+    font-size: 30px;
+    background-color: var(--black);
+    border-radius: 15px;
+    color:  var(--gold);
+}
+
+.nav-link:hover {
+    background-color: var(--gold);
+    color: var(--black);
+    border-radius: 15px;
+}
+
+
 /* Homepage Styling */
 .main-header-group {
-    background-color: rgba(13, 13, 13, 0.904);;
+    background-color: rgba(13, 13, 13, 0.904);
     padding: 30px;
     border-radius: 15px;
-    width: 60%;
     margin: 60px auto 20px auto
 }
 
@@ -18,24 +51,25 @@ body {
 .main-header-top, .main-header-bottom {
     font-family: Blippo, fantasy;
     font-size: 125px;
-    color: rgb(218, 199, 94)
+    color: var(--gold);
 }
 
 .secondary-header {
     font-family: OCR A Std, monospace;
     font-size: 40px;
-    background-color: rgb(13, 13, 13);
+    text-align: center;
+    background-color: var(--black);
     padding: 30px;
     font-weight: bold;
     border-radius: 15px;
-    color: rgb(218, 199, 94)
+    color: var(--gold);
 }
 
 .login-btn, .register-btn {
     font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(218, 199, 94);
-    background-color:rgb(13, 13, 13);
+    color: var(--gold);
+    background-color:var(--black);
     padding: 10px 30px;
     margin: 40px  
 }
@@ -43,21 +77,21 @@ body {
 /* Register and Login Modal Styling */
 
 .modal-header {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
 }
 
 .modal-title {
     font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .btn-close {
-    background-color:rgb(218, 199, 94);
+    background-color: var(--gold);
 }
 
 .modal-content {
-    background-color: rgb(208,208,210);
+    background-color: var(--gray);
 }
 
 .modal-labels {
@@ -66,22 +100,23 @@ body {
 }
 
 .modal-btn {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     font-family: Blippo, fantasy;
     font-size: 25px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
-/* Dashboard Styling */
+/* DASHBOARD STYLING */
 
-header {
-    background-color: rgb(13, 13, 13);
+/* Dashboard Header Styling */
+.dashboard-header-group {
+    background-color: var(--black);
 }
 
 .dashboard-header {
     font-family: Blippo, fantasy;
     font-size: 75px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .header-img {
@@ -91,23 +126,57 @@ header {
 .logout-btn {
     font-family: Blippo, fantasy;
     font-size: 30px;
-    color:rgb(13, 13, 13);
-    background-color:rgb(218, 199, 94);
+    color:var(--black);
+    background-color: var(--gold);
     padding: 10px 30px;
     margin: 40px  
 }
 
+/* User Card Styling */
+
 .user-card {
-    background-color: rgb(13, 13, 13);
+    background-color: var(--black);
     border-radius: 15px;
+}
+
+.circle-img {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+  
+.circle-img img {
+    height: 100%;
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
 
 .avatar {
     max-height: 300px;
 }
 
+.coins-list-group {
+    font-family: Blippo, fantasy;
+    font-size: 25px;
+    color: var(--gold);
+    text-align: center;
+}
+
 .coin-list {
-    background-color: rgb(208,208,210);
+    background-color: var(--gray);
+}
+
+.coin-list li{
+    height: 75px;
+}
+
+.list-group-item {
+    font-family: OCR A Std, monospace;
+    font-size: 40px;
+    color: var(--black);
+    text-align: center;
+    font-weight: bold;
+    height: 158px;
 }
 
 .icon {
@@ -117,54 +186,175 @@ header {
 .username {
     font-family: Blippo, fantasy;
     font-size: 60px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .user-info-text {
     font-family: OCR A Std, monospace;
     font-size: 20px;
-    color:rgb(218, 199, 94);
+    color: var(--gold);
 }
 
 .cards {
     padding: 0px 40px 40px 40px
 }
 
-.card-header {
-    background-color: rgb(13, 13, 13);
-    font-family: OCR A Std, monospace;
-    font-size: 20px;
-    color:rgb(218, 199, 94);
-    text-align: center;
-    font-weight: bold;
-}
-
-.list-group-item {
-    font-family: OCR A Std, monospace;
+.buy-btn {
+    font-family: Blippo, fantasy;
     font-size: 40px;
-    color:rgb(13, 13, 13);
-    text-align: center;
-    font-weight: bold;
-    height: 158px;
+    color: var(--gold);
+    background-color:var(--black);
+    padding: 10px 30px;
+    margin: 40px  
 }
 
-.form-select, .form-control {
+
+/* Buy & Sell Page styling */
+
+.sell-heading {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color: var(--gold);
+    background-color: var(--black);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.form-label {
+    font-family: Blippo, fantasy;
+    font-size: 25px;
+    color:  var(--gold);
+}
+
+.card {
+    background-color: var(--black);
+    border-radius: 15px;
+}
+
+.sell-card-header, .buy-card-header {
+    font-family: Blippo, fantasy;
+    font-size: 40px;
+    color: var(--gold);
+}
+
+#userFunds {
     font-family: OCR A Std, monospace;
+    color: var(--gold);
+    font-size: 25px;
 }
 
-.input-group-text, .price-label {
-    font-family: OCR A Std, monospace;
-    background-color: rgb(13, 13, 13);
-    color:rgb(218, 199, 94);
+#sell-btn, #buy-btn {
+    font-family: Blippo, fantasy;
+    font-size: 30px;
+    color:var(--black);
+    background-color: var(--gold);
+    margin-top: 20px;
 }
 
-.price-label {
-    padding: 5px;
-    border-radius: 5px;
-}
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 
-.price {
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
+@media screen and (max-width: 980px) {
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    }
+    
+    
+    /* MEDIA QUERY FOR TABLETS AND SMALLER */
+    
+    @media screen and (max-width: 768px) {
+        .main-header-top, .main-header-bottom {
+            font-size: 75px;
+            padding:10px
+        }
+    
+        .vault {
+            max-height: 200px;
+        }
+    
+        .coins-list-group {
+            font-size: 20px;
+        }
+    
+        .list-group-item {
+            font-size: 20px;
+            font-weight: bold;
+            height: 158px;
+        }
+    
+        .icon {
+            max-height: 30px
+        }
+    
+    }
+    
+    
+    
+    /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+    
+    @media screen and (max-width: 575px) {
+    
+        .vault {
+            max-height: 150px;
+        }
+    
+        .main-header-group {
+            flex-direction: column;
+            margin: 0px auto 10px auto;
+        }
+    
+        .secondary-header {
+            font-size: 25px;
+        }
+    
+        .login-btn, .register-btn {
+            font-size: 30px;
+            margin: 10px  
+        }
+    
+        .dashboard-header {
+            font-family: Blippo, fantasy;
+            font-size: 60px;
+            color: var(--gold);
+        }
+        
+        .header-img {
+            max-height: 75px
+        }
+        
+        .logout-btn {
+            font-family: Blippo, fantasy;
+            font-size: 30px;
+            color:var(--black);
+            background-color: var(--gold);
+            padding: 10px 30px;
+            margin: 40px  
+        }
+    
+        .circle-img {
+            width: 200px;
+            height: 200px;
+        }
+    
+        .username {
+            font-size: 30px;
+        }
+    
+        .user-info-text {
+            margin: 30px;
+        }
+    
+        .user-info {
+            margin: 10px;
+        }
+    
+    }

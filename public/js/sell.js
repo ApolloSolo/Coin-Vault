@@ -4,12 +4,12 @@ async function defaultAmount() {
   let quantity = document.getElementById("quantity");
   let currentQuantity = coin.options[coin.selectedIndex].dataset.userquantity;
   let currentPrice = coin.options[coin.selectedIndex].value;
-  console.log(currentPrice);
+  
   quantity.value = currentQuantity;
   price.value = currentPrice;
 }
 
-function updateTotal(price) {
+function updateTotal() {
   let totalEl = document.getElementById("total");
   const buyBtn = document.getElementById("buy-btn");
   let quantityEl = parseFloat(document.getElementById("quantity").value);
@@ -41,11 +41,11 @@ async function sellCoins(event) {
   let sellQuantity = document.getElementById("quantity").value;
 
   //Get coin name to than use in if statments to create put request
-  let coinTicker = coin.options[coin.selectedIndex].innerText;
-
+  let coinTicker = coin.options[coin.selectedIndex].innerText.trim();
+  console.log(coinTicker)
   //Get user's id to update correct user in DB
   const userID = document.getElementById("userFunds").dataset.id;
-
+  console.log(userID + " user id")
   //Remaining coins after user has sold
   let coinsRemaining = currentQuantity - sellQuantity;
 
@@ -95,7 +95,9 @@ async function sellCoins(event) {
        "Content-Type": "application/json",
      },
    };
- }
+ }  else {
+  alert("Select a coin")
+}
 
  const response = await fetch(`/api/wallet/${userID}`, putCoin);
 

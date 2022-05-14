@@ -20,7 +20,7 @@ async function loginFormHandler(event) {
       alert(response.statusText);
     }
   } else {
-    alert("Error");
+   //alert("Error");
   }
 };
 

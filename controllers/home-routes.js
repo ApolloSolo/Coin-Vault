@@ -66,6 +66,36 @@ router.get(
 );
 
 router.get(
+  "/buy",
+  hasSess,
+  catchAsyncError(async (req, res) => {
+    let userData = await User.findOne({
+      attributes: { exclude: ["password"] },
+      where: {
+        id: req.session.user_id,
+      },
+      include: [
+        {
+          model: Wallet,
+          attributes: ["btc", "eth", "atom", "doge"],
+        }
+      ]
+    });
+    const coinData = await reducedCoinData();
+    console.log(coinData);
+
+    let coinPrice = {
+      btc: coinData[0].price,
+      eth: coinData[1].price,
+      doge: coinData[2].price,
+      atom: coinData[3].price
+    }
+    userData = await userData.get({ plain: true });
+    res.render("buy", { userData, loggedIn: req.session.loggedIn, coinPrice});
+  })
+);
+
+router.get(
   "/sell",
   hasSess,
   catchAsyncError(async (req, res) => {
@@ -83,20 +113,50 @@ router.get(
     });
 
     const coinData = await reducedCoinData();
-    console.log(coinData)
+    console.log(coinData);
 
     let coinPrice = {
       btc: coinData[0].price,
       eth: coinData[1].price,
       doge: coinData[2].price,
-      atom: coinData[3].price
-    }
+      atom: coinData[3].price,
+    };
 
     userData = await userData.get({ plain: true });
     res.render("sell", { userData, loggedIn: req.session.loggedIn, coinPrice });
   })
 );
 
+router.get(
+  "/buy",
+  hasSess,
+  catchAsyncError(async (req, res) => {
+    let userData = await User.findOne({
+      attributes: { exclude: ["password"] },
+      where: {
+        id: req.session.user_id,
+      },
+      include: [
+        {
+          model: Wallet,
+          attributes: ["btc", "eth", "atom", "doge"],
+        },
+      ],
+    });
 
+    const coinData = await reducedCoinData();
+
+    let coinPrice = {
+      btc: coinData[0].price,
+      eth: coinData[1].price,
+      doge: coinData[2].price,
+      atom: coinData[3].price,
+    };
+
+    userData = await userData.get({ plain: true });
+
+    res.render("buy", { userData, loggedIn: req.session.loggedIn, coinPrice });
+  })
+);
 
 module.exports = router;
