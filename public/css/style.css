@@ -41,7 +41,6 @@ body {
     background-color: rgba(13, 13, 13, 0.904);
     padding: 30px;
     border-radius: 15px;
-    width: 60%;
     margin: 60px auto 20px auto
 }
 
@@ -58,6 +57,7 @@ body {
 .secondary-header {
     font-family: OCR A Std, monospace;
     font-size: 40px;
+    text-align: center;
     background-color: var(--black);
     padding: 30px;
     font-weight: bold;
@@ -251,3 +251,110 @@ body {
     background-color: var(--gold);
     margin-top: 20px;
 }
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+
+@media screen and (max-width: 980px) {
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    }
+    
+    
+    /* MEDIA QUERY FOR TABLETS AND SMALLER */
+    
+    @media screen and (max-width: 768px) {
+        .main-header-top, .main-header-bottom {
+            font-size: 75px;
+            padding:10px
+        }
+    
+        .vault {
+            max-height: 200px;
+        }
+    
+        .coins-list-group {
+            font-size: 20px;
+        }
+    
+        .list-group-item {
+            font-size: 20px;
+            font-weight: bold;
+            height: 158px;
+        }
+    
+        .icon {
+            max-height: 30px
+        }
+    
+    }
+    
+    
+    
+    /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+    
+    @media screen and (max-width: 575px) {
+    
+        .vault {
+            max-height: 150px;
+        }
+    
+        .main-header-group {
+            flex-direction: column;
+            margin: 0px auto 10px auto;
+        }
+    
+        .secondary-header {
+            font-size: 25px;
+        }
+    
+        .login-btn, .register-btn {
+            font-size: 30px;
+            margin: 10px  
+        }
+    
+        .dashboard-header {
+            font-family: Blippo, fantasy;
+            font-size: 60px;
+            color: var(--gold);
+        }
+        
+        .header-img {
+            max-height: 75px
+        }
+        
+        .logout-btn {
+            font-family: Blippo, fantasy;
+            font-size: 30px;
+            color:var(--black);
+            background-color: var(--gold);
+            padding: 10px 30px;
+            margin: 40px  
+        }
+    
+        .circle-img {
+            width: 200px;
+            height: 200px;
+        }
+    
+        .username {
+            font-size: 30px;
+        }
+    
+        .user-info-text {
+            margin: 30px;
+        }
+    
+        .user-info {
+            margin: 10px;
+        }
+    
+    }
