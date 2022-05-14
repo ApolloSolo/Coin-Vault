@@ -12,7 +12,6 @@
             <div class="navbar-nav">
                 <a class="nav-link mx-2" href="/">Home</a>
                 <a class="nav-link mx-2" href="/dashboard">Dashboard</a>
-                <a class="nav-link mx-2" href="/">Logout</a>
             </div>
         </div>
     </div>
@@ -32,7 +31,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="coin">Sell</label>
                             <select id="coinSelect" class="form-select" aria-label="Default select example">
-                                <option>Coins</option>
+                                <option>Select</option>
                                 <option data-userQuantity="{{userData.wallet.btc}}" value="{{coinPrice.btc}}">Bitcoin
                                 </option>
                                 <option data-userQuantity="{{userData.wallet.eth}}" value="{{coinPrice.eth}}">Ethereum
@@ -40,16 +39,16 @@
                                 <option data-userQuantity="{{userData.wallet.doge}}" value="{{coinPrice.doge}}">Doge
                                 </option>
                                 <option data-userQuantity="{{userData.wallet.atom}}" value="{{coinPrice.atom}}">Atom
-</option>
+                                </option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="price">Price Per Coin</label>
-                            <input class="form-control" type="number" id="price" step='0.01' />
+                            <input class="form-control" type="number" id="price" step='0.01' min="0"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="quantity">Quantity</label>
-                            <input class="form-control" type="number" id="quantity" step='0.01' />
+                            <input class="form-control" type="number" id="quantity" step='0.01' min="0"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="total">Total</label>
