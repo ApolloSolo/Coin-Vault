@@ -33,10 +33,10 @@
                         <div class="mb-3">
                             <label class="form-label" for="coin">Buy</label>
                             <select id="coinSelect" class="form-select" aria-label="Default select example">
-                                <option data-userQuantity="{{userData.wallet.btc}}" value="btc">Bitcoin</option>
-                                <option data-userQuantity="{{userData.wallet.eth}}" value="eth">Ethereum</option>
-                                <option data-userQuantity="{{userData.wallet.atom}}" value="eth">Atom</option>
-                                <option data-userQuantity="{{userData.wallet.doge}}" value="doge">Doge</option>
+                                <option data-userQuantity="{{userData.wallet.btc}}" value="{{coinPrice.btc}}">Bitcoin</option>
+                                <option data-userQuantity="{{userData.wallet.eth}}" value="{{coinPrice.eth}}">Ethereum</option>
+                                <option data-userQuantity="{{userData.wallet.atom}}" value="{{coinPrice.atom}}">Atom</option>
+                                <option data-userQuantity="{{userData.wallet.doge}}" value="{{coinPrice.doge}}">Doge</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -52,7 +52,7 @@
                             <input class="form-control" type="text" id="total" disabled />
                         </div>
                         <div class="bottom-peak d-grid gap-2 col-6 mx-auto">
-                            <button id="sell-btn" class="btn disabled" type="submit">Buy</button>
+                            <button id="buy-btn" class="btn disabled" type="submit">Buy</button>
                         </div>
                     </form>
                 </div>
@@ -61,4 +61,4 @@
     </div>
 </div>
 
-<script src="../public/js/buy.js"></script>
+<script src="/js/buy.js"></script>

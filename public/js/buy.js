@@ -2,16 +2,15 @@
 //select price amount--> this will give us the current price of the coin. 
 //select quantity amount--> this will give us the amount that the user wants to purchase
 //finding the value of the price and quantity will give us the current user's price/quantity
-async function startingAmount() {
+function startingAmount() {
     let coin = document.getElementById('coinSelect');
     let price = document.getElementById('price');
     let quantity = document.getElementById('quantity');
     let currentQuantity = coin.options[coin.selectedIndex].dataset.userquantity;
-    let currentPrice = coin.options[coin.selectedIndex].value;
-    console.log(currentPrice);
+    let coinTicker = coin.options[coin.selectedIndex].value;
     console.log(currentQuantity);
     quantity.value = currentQuantity;
-    price.value = currentPrice;
+    price.value = coinTicker;
 }
 
 //quantity changes when the user selects how many coins they want to purchase
@@ -22,27 +21,28 @@ function getTotal(price) {
     //parseFloat function--> parses an argument(converting to a string first if needed) and returns a floating point number
     let quantityEl = parseFloat(document.getElementById('quantity').value);
     let priceEl = parseFloat(document.getElementById('price').value);
-    let totalBuyAmt = priceEl * quantityEl;
+    let totalBuyAmt = parseFloat(priceEl * quantityEl);
     //toFixed(2)-->formats a number to two decimal places
-    totalBuyAmt = totalBuyAmt.toFixed(2);
-    totalEl.value = totalBuyAmt;
+    totalBuyAmt = totalBuyAmt;
+    totalEl.value = totalBuyAmt.toFixed(2);
+    console.log(totalBuyAmt);
     //remove 'disabled' class from 'total'
     buyBtn.classList.remove('disabled');
 }
 
-function buyCoin(event) {
+async function buyCoin(event) {
     event.preventDefault();
 
     //total amount of coins
     let totalCoin = document.getElementById('total').value;
-    total = parseFloat(total);
+    totalCoin = parseFloat(totalCoin);
     //user's money
     let userMoney = document.getElementById('userFunds').innerText;
     userMoney = parseFloat(userMoney);
     //selected coin
     let coin = document.getElementById('coinSelect');
     //amount of coins the user has before purchase
-    let currentAmount = coin.options[coin.selectedIndex].dataset.userQuantity;
+    let currentAmount = coin.options[coin.selectedIndex].dataset.userquantity;
     //amount of coins the user intends to purchase
     let amountToBuy = document.getElementById('quantity').value;
     //coin name
@@ -53,7 +53,7 @@ function buyCoin(event) {
     let walletAmount = currentAmount + amountToBuy;
     //user's money after purchase
     let newUserAmount = userMoney + totalCoin;
-    
+
     let coinAmount = {};
     //if coinTicker === chosen coin, PUT request for that coin to be updated in the wallet
     if (decidedCoin === 'Bitcoin') {
@@ -96,7 +96,6 @@ function buyCoin(event) {
                 'Content-Type': 'application/json',
             }
         };
-        console.log('buyCoin');
     }
 
     //fetch the user's wallet id and coinAmount obj
