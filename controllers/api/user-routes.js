@@ -79,7 +79,8 @@ router.post(
     if (!userData) {
       throw new ExpressError("Could not find user", 404);
     }
-    const validPassword = await userData.checkPassword(req.body.password);
+    console.log(req.body.password)
+    const validPassword = userData.checkPassword(req.body.password);
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
       throw new ExpressError("Incorrect password!", 400);

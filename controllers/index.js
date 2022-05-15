@@ -11,9 +11,9 @@ router.use("*", (req, res) => {
 });
 
 //ExpressError passes data to our error handler
-router.use((err, req, res, next) => {
-  const { status = 500, message = 'Something went wrong' } = err;
-  res.status(status).send(message)
-});
+// router.use((err, req, res, next) => {
+//   const { status = 500, message = 'Something went wrong' } = err;
+//   res.status(status).send(message)
+// });
 
 module.exports = router;
